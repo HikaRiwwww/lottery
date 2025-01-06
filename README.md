@@ -2,6 +2,18 @@
 
 这是一个基于 Hardhat 开发的去中心化彩票系统，使用 Chainlink VRF 实现可验证的随机数生成。
 
+## 已部署合约
+
+### Sepolia测试网
+- 合约地址: [0xFCEa21b603a675093AE52B7638f6EeCC240fF395](https://sepolia.etherscan.io/address/0xFCEa21b603a675093AE52B7638f6EeCC240fF395)
+- 网络: Sepolia Testnet
+- 验证状态: 已验证
+
+您可以通过以下方式与合约交互：
+1. 直接在 Etherscan 上与合约交互
+2. 使用 Web3 钱包（如 MetaMask）连接到 Sepolia 测试网
+3. 通过合约 ABI 在您的 DApp 中集成
+
 ## 功能特性
 
 * 自动化抽奖：使用 Chainlink Automation 实现定时自动开奖
@@ -137,3 +149,33 @@ yarn hardhat test --network sepolia
 ## 许可证
 
 MIT
+
+## 与合约交互
+
+### 通过 Etherscan
+1. 访问 [合约页面](https://sepolia.etherscan.io/address/0xFCEa21b603a675093AE52B7638f6EeCC240fF395#writeContract)
+2. 连接您的 Web3 钱包
+3. 在 "Write Contract" 标签页中可以：
+   - 参与彩票（enterRaffle）
+   - 查看当前状态
+   - 查询获奖信息
+
+### 通过代码
+```javascript
+const contractAddress = "0xFCEa21b603a675093AE52B7638f6EeCC240fF395";
+const contract = await ethers.getContractAt("Raffle", contractAddress);
+
+// 参与彩票
+const entranceFee = await contract.getEntranceFee();
+await contract.enterRaffle({ value: entranceFee });
+
+// 查询状态
+const raffleState = await contract.getRaffleState();
+const players = await contract.getPlayers();
+const recentWinner = await contract.getRecentWinner();
+```
+
+## 测试网络资源
+
+- [Sepolia 测试网水龙头](https://sepoliafaucet.com/) - 获取测试网 ETH
+- [Chainlink Faucet](https://faucets.chain.link/) - 获取测试网 LINK 代币
