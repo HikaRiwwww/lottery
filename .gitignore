@@ -1,0 +1,56 @@
+# Hardhat & Node.js
+node_modules
+coverage
+coverage.json
+typechain
+typechain-types
+gas-report.txt
+
+# Hardhat files
+cache
+artifacts
+deployments
+
+# IDE & Editors
+.vscode
+.idea
+*.swp
+*.swo
+.DS_Store
+
+# Debug files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.enc
+!.env-enc
+
+# Contract size debug
+contract-sizes.txt
+
+# Hardhat deploy history
+deployments/localhost
+deployments/hardhat
+
+# Testing
+coverage/
+.coverage_artifacts/
+.coverage_cache/
+.coverage_contracts/
+
+# Production build
+dist
+build
+out
+
+# Misc
+.DS_Store
+*.pem
+.env.example 
